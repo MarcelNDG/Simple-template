@@ -7,7 +7,7 @@ import React from 'react'
 const HeaderContent = () => {
     return (
         <>
-            <h1>LOGO</h1>
+            <h1 className='topLogo'>LOGO</h1>
             <div className='headerWrap'>
                 <ul className='headerBtnList'>
                     <li className='headerBtn'>Item</li>
