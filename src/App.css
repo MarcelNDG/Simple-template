@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+background-color: #2b2b2b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* --- Global styling --- */
+.App{
+  display: grid;
+  position: relative;
+  grid-gap: 0.4rem;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 0.1fr 0.8fr 0.1fr;
+  grid-template-areas :    
+  "header header" 
+  "main main" 
+  "footer footer";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header, main, footer{
+ 
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+  padding: 0 0.4rem;
+  
+  grid-area: header;
+}
+
+main{
+  grid-area: main;
+  background-color: rgb(255, 181, 168);
+}
+
+footer{
+  grid-area: footer;
+  background-color: orange;
+}
+
+/* --- HEADER styling --- */
+.headerWrap{
+  display: flex;
+  flex-direction: row;
+  background-color: orange;
+}
+
+.headerBtnList, .headerOptionsWrap{
+  display: none;
+  /* flex */
+  align-items: center;  
+}
+
+.headerBtnList{
+  padding: 0;  
+}
+
+.headerBtn{
+  list-style: none;  
+}
+
+.headerOptionsWrap{
+  background-color: orangered;
+}
+
+/* --- Mobile BTN --- */
+.mobileBtnWrap{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  background-color: blue;
+  justify-content: flex-end;
+  height: 12vh;
+  padding: 0.2rem;
+  width: 100%;
+}
+
+.mobileBtnWrap button{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  
+}
+
+.hmbgIcon{
+  height: 3rem;
+  width: 3rem;
+}
+
+/* --- MAIN styling --- */
+main{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 0rem 0.4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.title{
+font-size: 15vw;
+margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main p {
+  width: 60vw;
+}
+
+/* --- FOOTER styling --- */
+.footerWrap { 
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  grid-template-areas: "name social";
+  padding: 0 0.4rem;
+}
+
+.myName{
+  grid-area: name;
+  text-align: start;
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  grid-area: social;
+}
+
+.socialIcons li{
+  list-style: none;
+}
+
+/* --- Media --- */
+@media(min-width: 480px){
+ 
+}
+
+/* --- Media --- */
+@media(min-width: 720px){
+  .headerBtnList, .headerOptionsWrap{
+    display: flex;     
   }
-  to {
-    transform: rotate(360deg);
+
+  .mobileBtnWrap{
+    display: none;
   }
+}
+
+@media(min-width: 1080px){
+
+  main{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .title{
+    font-size: 10rem;
+    margin: 0;
+    }
+
+    main p {
+      width: 20rem;
+    }
+    
 }
