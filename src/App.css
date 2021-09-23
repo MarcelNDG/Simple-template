@@ -175,11 +175,10 @@ main p {
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 @media only screen and (min-width:720px)  {
-
+  /* Targets galaxy fold horizontal and all mobile 720 desktop changes too */
   .topLogo{
     font-size: 1.6rem;
   }
-
   .hmbgIcon{
     width: 2rem;
   }
