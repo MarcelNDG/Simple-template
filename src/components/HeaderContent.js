@@ -1,8 +1,5 @@
 import React from 'react'
-
-
-
-
+import { Link } from 'react-router-dom'
 
 const HeaderContent = () => {
     return (
@@ -10,10 +7,10 @@ const HeaderContent = () => {
             <h1 className='topLogo'>LOGO</h1>
             <div className='headerWrap'>
                 <ul className='headerBtnList'>
-                    <li className='headerBtn'>Item</li>
-                    <li className='headerBtn'>Item</li>
-                    <li className='headerBtn'>Item</li>
-                    <li className='headerBtn'>Item</li>
+                    <Link to='/about' className='headerBtn'>About</Link>
+                    <Link to='/stores' className='headerBtn'>Stores</Link>
+                    <Link to='/contact' className='headerBtn'>Contact</Link>
+                    <Link to='/sale' className='headerBtn'>Sale</Link>
 
                 </ul>
                 <div className='headerOptionsWrap'>
