@@ -14,7 +14,7 @@ const HeaderContent = () => {
 
                 </ul>
                 <div className='headerOptionsWrap'>
-                    <div className='headerBtnList'>
+                    <div className='navOptionBtn'>
                         <button>Button</button>
                     </div>                    
                 </div>

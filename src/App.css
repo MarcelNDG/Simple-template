@@ -8,47 +8,58 @@ background-color: #2b2b2b;
 
 /* --- Global styling a--- */
 .App{
-  display: grid;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  grid-gap: 0.4rem;
-  height: 100vh;
+  justify-content: space-between;
+  
   width: 100vw;
-  grid-template-rows: 0.1fr 2fr 0.1fr;
-  grid-template-areas :    
-  "header header" 
-  "main main" 
-  "footer footer";
 }
 
 
 
 header{
  display: grid;
+ justify-content: space-between;
+ background-color: aqua;
+ align-items: center;
+ height: 10vh;
  grid-template-columns: 1fr 0.8fr;
  grid-gap: 0.4rem;
-  justify-content: space-between;
-  background-color: aqua;
-  align-items: center;
-  padding: 0 0.4rem;
+ padding: 0 0.4rem;
+ min-height: 3rem;
   
   grid-area: header;
 }
 
 main{
-  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background-color: rgb(255, 181, 168);
+  padding: 0rem 0.4rem;
+  
+  min-height: 80vh;
+
+  grid-area: main;
 }
 
 footer{
   grid-area: footer;
   background-color: orange;
+  min-height: 4rem;
+  height: 10vh;
 }
 
 /* --- HEADER styling --- */
 .headerWrap{
   display: grid;
- grid-template-columns: 1fr 0.2fr;
- grid-gap: 0.4rem;
+  grid-template-columns: 1fr 0.2fr;
+  grid-gap: 0.4rem;
   justify-content: space-between;
   background-color: orange;
 }
@@ -70,6 +81,9 @@ footer{
 }
 
 .headerOptionsWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: orangered;
 }
 
@@ -81,6 +95,9 @@ footer{
   background-color: rgba(0, 0, 255, 0.281);
   justify-content: flex-end;
   padding: 0.3rem;
+  
+  min-height: 3rem;
+  height: 10vh;
   width: 100%;
 }
 
@@ -88,7 +105,10 @@ footer{
   cursor: pointer;
   border: none;
   background-color: transparent;
-  
+}
+
+.navOptionBtn{
+  display: none;
 }
 
 .hmbgIcon{
@@ -97,14 +117,6 @@ footer{
 }
 
 /* --- MAIN styling --- */
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: 0rem 0.4rem;
-}
 
 .topLogo{
   margin: 0;
@@ -112,11 +124,22 @@ main{
 }
 
 .title{
+justify-self: center;
 font-size: 15vw;
 margin: 0;
 }
 
-main p {
+.mainWrap{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.mainWrap  p {
+  justify-self: center;
+  align-self: center;
+  margin: 0;
   width: 60vw;
 }
 
@@ -144,6 +167,25 @@ main p {
   list-style: none;
 }
 
+/* -- HOME PAGE -- */
+
+.modelContainer{
+  position: absolute;
+  display: grid;
+}
+
+.modelPic{
+  position: fixed;
+  height: 80vh;
+  bottom: 0px;
+  opacity: 0.5;
+  align-self: center
+}
+
+/* --- HOME page --- */
+
+
+
 /* --- Media --- */
 @media(min-width: 480px){
  
@@ -151,6 +193,19 @@ main p {
 
 /* --- Media --- */
 @media(min-width: 720px){
+
+  main{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mainWrap{
+    padding: 0 2rem;
+  }
+
+  .title{
+    font-size: 5rem;
+  }
+
   .headerOptionsWrap{
     display: flex;     
   }
@@ -161,10 +216,17 @@ main p {
     justify-content: space-evenly;
   }
 
-  
-
   .mobileBtnWrap{
     display: none;
+  }
+
+  .navOptionBtn{
+    display: flex;
+  }
+
+  .modelPic{
+    align-self: end;
+    right: 1.8rem;
   }
 }
 
@@ -176,14 +238,21 @@ main p {
     align-items: center;
   }
 
+  .mainWrap{
+    padding: 0 2rem;
+  }
+
   .title{
-    font-size: 10rem;
     margin: 0;
     }
 
     main p {
-      width: 20rem;
-    }
+    width: 20rem;
+  }
+
+  .modelPic{
+    right: 6rem;
+  }
     
 }
 
@@ -197,7 +266,31 @@ main p {
   .hmbgIcon{
     width: 2rem;
   }
+  
 }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+@media (max-width:654px) and (orientation: landscape) {
+
+  body {
+    background-color: lightblue;
+  }
+
+  h1{
+    color: blue;
+  }
+
+  .title{
+    color: blue;
+  }
+
+  .modelPic{
+    
+    height: 24rem;
+    bottom: -9rem;
+    right: 10vw;
+  }
+
+}
